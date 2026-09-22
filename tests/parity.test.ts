@@ -1,15 +1,7 @@
 import {it,expect} from 'vitest';
 import {scan,add,move,rename,renameLabel,linkOf} from '../src/document';
-import {importPreferences} from '../src/preferences';
 import {listItems} from '../src/lists';
 
-it('imports existing theme, switches, wrapping, collapsed link aliases and custom colors',()=>{
-  const doc=scan('# [[Folder/Playbook#Intro|介紹]]\n## 第二節\n');
-  const key=[...doc.rows.values()][1].key;
-  const legacy=encodeURIComponent('介紹')+'[0]';
-  const p=importPreferences({titleWrapLength:40,expandListItems:true,showBodyPreview:true,files:{'test.md':{themeId:'muji',collapsedNodeKeys:[legacy],expandedFileNodeKeys:[legacy],nodeAppearances:{[legacy]:{textColor:'#112233',backgroundColor:'#aabbcc'}}}}},'test.md',doc);
-  expect(p).toMatchObject({theme:'linen',wrap:40,lists:true,excerpt:true,folded:[key],openLinks:[key],colors:{[key]:{color:'#112233',background:'#aabbcc'}}});
-});
 it('keeps nested lists and ignores fenced examples',()=>{
   const list=listItems('- 父\n  - 子\n    1. 孫\n- [x] 完成\n```md\n- 不顯示\n```');
   expect(list.map(i=>i.title)).toEqual(['父','[x] 完成']);

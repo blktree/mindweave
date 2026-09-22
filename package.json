@@ -1,6 +1,6 @@
 {
-  "name": "mindweave-independent",
-  "version": "0.2.1",
+  "name": "mindweave",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "license": "AGPL-3.0-only",

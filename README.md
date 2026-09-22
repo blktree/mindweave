@@ -31,7 +31,7 @@ Desktop only, requiring Obsidian 1.13.7 or later. Tested on macOS; Windows and L
 ### Installation and getting started
 
 1. Download `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/blktree/mindweave/releases/latest).
-2. Place them in `.obsidian/plugins/mindweave-independent/` inside your vault.
+2. Place them in `.obsidian/plugins/mindweave/` inside your vault.
 3. Restart Obsidian or reload plugins, then enable **MindWeave** under **Settings → Community plugins**.
 4. Open a Markdown note and click the lightbulb in the left sidebar. The toolbar document icon switches back to Markdown.
 5. Choose your interface language under **Settings → MindWeave → Language**. This changes interface labels, not note content.
@@ -68,7 +68,6 @@ Drag a node onto another node to make it a child, or near its upper/lower edge t
 - Markdown supports six heading levels. File roots and read-only outline/list nodes cannot be copied or cut as editable subtrees.
 - Expanded external outlines are read-only for structural edits; editing their content writes back to the linked source note.
 - Structural undo and native body-editor undo are separate. Body or external file changes clear old structural history to avoid overwriting newer content.
-- The plugin ID is `mindweave-independent`. It does not replace the older `mind-weave` installation. Initial migration may read appearance settings from that plugin in the same vault without modifying them.
 - No plugin-specific account, paid feature lock, telemetry, advertising, or self-update mechanism.
 - MindWeave does not upload notes or use its own remote API. Obsidian or other extensions may fetch remote images and embedded content referenced by your notes.
 - Editing writes to Markdown files in your vault. Appearance and language preferences are stored in the plugin data file. Copy/cut writes selected content to the system clipboard; paste reads clipboard text when invoked.
@@ -113,7 +112,6 @@ Development is supported by voluntary contributions: [Buy Me a Coffee](https://b
 
 可下載練習筆記：[週末旅行 / Weekend Trip](docs/examples/01-weekend-trip.md)、[網站改版 / Website Redesign](docs/examples/02-website-redesign.md)。範例內容同時包含中文與英文，不含私人資料。
 
-此版本的 ID 是 `mindweave-independent`，可與舊版同時存在。
 
 開啟 Markdown 筆記後，使用命令「開啟思維導圖」、檔案選單「以 MindWeave 開啟」，或左側燈泡圖示。工具列的文件圖示可切回 Markdown。
 
@@ -134,9 +132,7 @@ Development is supported by voluntary contributions: [Buy Me a Coffee](https://b
 
 ## 目前界線
 
-外掛 ID 維持 `mindweave-independent`，不會自動替換舊版 `mind-weave`。
 
-- 首次開啟筆記會讀取舊版 `mind-weave/data.json` 的主題、顏色、收合與展開狀態；每行字數與兩個顯示開關沿用原版全域值。不改寫舊設定，已在獨立版儲存的設定優先。
 - 重新命名、搬移及復原會一起追蹤節點外觀與選取，不需重新上色。
 - 標題／結構歷史與正文原生歷史分開；正文或外部檔案更新後會清除舊結構歷史，避免結構復原覆蓋新正文。
 - 尚未進行手機版實機測試、大量真實筆記的 Markdown 邊界測試，或官方目錄送審。
@@ -146,7 +142,7 @@ Development is supported by voluntary contributions: [Buy Me a Coffee](https://b
 
 - 目前外掛沒有登入、付費驗證、遙測、廣告或自動更新機制；不要求外掛專用帳號，也沒有付費功能鎖。
 - 外掛程式沒有自建遠端 API 或主動上傳筆記。正文使用 Obsidian 的 Markdown 渲染器；筆記若包含遠端圖片或其他嵌入內容，Obsidian／已安裝擴充仍可能向該內容來源發出請求，因此不保證任意筆記均完全離線。
-- 編輯操作會修改目前 vault 中的 Markdown，包含明確選取的連結筆記正文；不主動讀寫 vault 以外的檔案。首次使用可能讀取同一 vault 的舊版設定，僅用於外觀遷移。
+- 編輯操作會修改目前 vault 中的 Markdown，包含明確選取的連結筆記正文；不主動讀寫 vault 以外的檔案。
 - 自訂外觀與語言儲存在外掛的 `data.json`。建議使用前備份 vault；正文與結構的復原歷史分開。
 - 允許依 AGPL-3.0-only 使用、修改與散布，軟體不提供擔保。採公開原始碼與自願贊助方向，贊助入口使用 manifest 的 fundingUrl，由 Obsidian 顯示；不影響功能使用。未來若收費或需要帳號，必須先更新本說明。
 

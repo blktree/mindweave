@@ -2,29 +2,23 @@ import { Plugin, PluginSettingTab, Setting, FileView, TFile, WorkspaceLeaf, Noti
 import { scan, linkOf, renameLabel, add, move, splice, pasteBranch, pasteText, textTitles, Timeline, type Section, type Outline } from './document';
 import { Camera, arrange, type Box } from './geometry';
 import { SectionEditor, sectionProjection } from './body-editor';
-import { defaults, importPreferences, normalizeWrap, type Preferences } from './preferences';
+import { defaults, normalizeWrap, type Preferences } from './preferences';
 import { listItems, type ListItem } from './lists';
 import { language, languages, translate, translateControls, type Language } from './language';
 
-const TYPE = 'mindweave-independent-view';
+const TYPE = 'mindweave-view';
 interface Display { key: string; title: string; source: Section; file: TFile; outline: Outline; children: Display[]; readonly: boolean }
 
 export default class MindWeave extends Plugin {
   branchClipboard?: { chunk: string; path: string; key: string; original: string; cut: boolean };
   preferences: Record<string, Preferences> = {};
-  legacy: Record<string, any> = {};
   displaySettings = { wrap:20, excerpt:false, lists:false };
   language: Language = 'zh-TW';
   async onload() {
     const saved = await this.loadData(); this.preferences = saved?.preferences ?? {};
     this.language = language(saved?.language);
     this.addSettingTab(new MindWeaveSettings(this));
-    const settings = `${this.app.vault.configDir}/plugins/mind-weave/data.json`;
-    if (await this.app.vault.adapter.exists(settings)) {
-      try { this.legacy = JSON.parse(await this.app.vault.adapter.read(settings)); } catch { new Notice('原版設定無法讀取，使用預設顯示設定。'); }
-    }
-    const imported = importPreferences(this.legacy,'');
-    this.displaySettings = saved?.displaySettings ?? {wrap:imported.wrap,excerpt:imported.excerpt,lists:imported.lists};
+    this.displaySettings = saved?.displaySettings ?? {wrap:20,excerpt:false,lists:false};
     this.registerEditorExtension(sectionProjection);
     this.registerView(TYPE, leaf => new MapView(leaf, this));
     this.addRibbonIcon('lightbulb', '開啟 MindWeave', () => { void this.open(); }).addClass('mwi-bulb');
@@ -137,7 +131,7 @@ class MapView extends FileView {
   }
   async onLoadFile(file: TFile) {
     const outline = scan(await this.app.vault.read(file),file.basename);
-    this.preferences = {...structuredClone(this.plugin.preferences[file.path] ?? importPreferences(this.plugin.legacy,file.path,outline)),...this.plugin.displaySettings};
+    this.preferences = {...structuredClone(this.plugin.preferences[file.path] ?? defaults()),...this.plugin.displaySettings};
     this.selected = this.preferences.selection; this.history = new Timeline(); this.expanded.clear(); this.paneHeight = 0;
     await this.reload(true);
     this.fit();

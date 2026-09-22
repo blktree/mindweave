@@ -24,13 +24,11 @@ The plugin is not yet listed in the community directory. Download matching asset
 手動安裝步驟 / Manual installation:
 
 1. 關閉 Obsidian，先備份 vault。 / Close Obsidian and back up the vault.
-2. 在該 vault 的設定目錄建立 `.obsidian/plugins/mindweave-independent/`；若自訂了設定目錄，改用你的設定目錄。 / Create this folder under your vault's configuration directory; substitute your custom configuration directory if applicable.
+2. 在該 vault 的設定目錄建立 `.obsidian/plugins/mindweave/`；若自訂了設定目錄，改用你的設定目錄。 / Create this folder under your vault's configuration directory; substitute your custom configuration directory if applicable.
 3. 放入同一版本的 `main.js`、`manifest.json`、`styles.css`；保留一起提供的 `LICENSE`、`NOTICE`。 / Copy the matching build files and retain the supplied license notices.
 4. 開啟 Obsidian → 設定 → 社群外掛，依 Obsidian 提示允許社群外掛，啟用 **MindWeave**。 / Open Settings → Community plugins, allow community plugins when prompted, and enable MindWeave.
 
-資料夾 ID 仍為 `mindweave-independent`，畫面名稱是 MindWeave，兩者不同是正常的。不要覆寫舊外掛 `mind-weave` 的目錄。
 
-The folder ID remains `mindweave-independent`, while the display name is MindWeave. Do not overwrite the older `mind-weave` folder.
 
 ## 2. Markdown 與節點的關係 / How notes become nodes
 
