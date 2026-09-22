@@ -66,9 +66,17 @@ Edits change your Markdown files, including linked notes you choose to edit. Bac
 
 MindWeave does not upload your notes or collect telemetry. Remote content embedded in notes may still load through Obsidian. Copy and paste use the system clipboard when invoked.
 
-### License and support
+### ☕ Support MindWeave
 
-Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE) · [Buy Me a Coffee](https://buymeacoffee.com/blktree)
+If MindWeave helps you organize your notes and ideas, consider buying me a coffee to support continued development and maintenance. Your support is optional—all features remain available without a donation.
+
+[![Buy me a coffee](https://img.shields.io/badge/Buy_me_a_coffee-Support_MindWeave-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/blktree)
+
+**[☕ Buy me a coffee](https://buymeacoffee.com/blktree)**
+
+### License
+
+Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE)
 
 ---
 
@@ -114,6 +122,14 @@ Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE) · [Buy
 
 MindWeave 不上傳筆記、不蒐集遙測資料。筆記中的遠端圖片等內容仍可能透過 Obsidian 載入；複製貼上操作會使用系統剪貼簿。
 
-### 授權與支持
+### ☕ 支持 MindWeave
 
-Copyright © 2026 blktree。[AGPL-3.0-only 授權](LICENSE) · [著作權聲明](NOTICE) · [支持開發](https://buymeacoffee.com/blktree)
+如果 MindWeave 幫助你整理筆記、釐清想法，歡迎請我喝杯咖啡，支持後續開發與維護。贊助完全自願，不贊助也能使用所有功能。
+
+[![請我喝杯咖啡，支持 MindWeave](https://img.shields.io/badge/Buy_me_a_coffee-Support_MindWeave-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/blktree)
+
+**[☕ 請我喝杯咖啡，支持開發](https://buymeacoffee.com/blktree)**
+
+### 授權
+
+Copyright © 2026 blktree。[AGPL-3.0-only 授權](LICENSE) · [著作權聲明](NOTICE)
