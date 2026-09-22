@@ -49,7 +49,6 @@ class MindWeaveSettings extends PluginSettingTab {
   constructor(private owner: MindWeave) { super(owner.app, owner); }
   display() {
     this.containerEl.empty();
-    new Setting(this.containerEl).setName('MindWeave').setHeading();
     new Setting(this.containerEl)
       .setName(translate('語言', this.owner.language))
       .setDesc(translate('切換工具列與提示文字，不會修改筆記內容。', this.owner.language))
