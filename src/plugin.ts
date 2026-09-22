@@ -49,7 +49,7 @@ class MindWeaveSettings extends PluginSettingTab {
   constructor(private owner: MindWeave) { super(owner.app, owner); }
   display() {
     this.containerEl.empty();
-    this.containerEl.createEl('h2', {text:'MindWeave'});
+    new Setting(this.containerEl).setName('MindWeave').setHeading();
     new Setting(this.containerEl)
       .setName(translate('語言', this.owner.language))
       .setDesc(translate('切換工具列與提示文字，不會修改筆記內容。', this.owner.language))
@@ -112,7 +112,7 @@ class MapView extends FileView {
     this.registerDomEvent(this.contentEl.ownerDocument, 'keydown', e => {
       const target = e.target as Element;
       const doc = this.contentEl.ownerDocument;
-      if (this.app.workspace.activeLeaf?.view !== this || e.defaultPrevented ||
+      if (this.app.workspace.getActiveViewOfType(MapView) !== this || e.defaultPrevented ||
           target.closest('.modal-container,input,textarea,select,button,a,[contenteditable="true"],.cm-editor')) return;
       // Rebuilding the canvas can leave focus on the page instead of the canvas.
       if (this.contentEl.contains(target) || target === doc.body || target === doc.documentElement) this.key(e);
@@ -130,7 +130,6 @@ class MapView extends FileView {
     }));
   }
   async onLoadFile(file: TFile) {
-    const outline = scan(await this.app.vault.read(file),file.basename);
     this.preferences = {...structuredClone(this.plugin.preferences[file.path] ?? defaults()),...this.plugin.displaySettings};
     this.selected = this.preferences.selection; this.history = new Timeline(); this.expanded.clear(); this.paneHeight = 0;
     await this.reload(true);
@@ -144,7 +143,7 @@ class MapView extends FileView {
     if (text !== this.doc.text && !initial) { this.history = new Timeline(); this.expanded.clear(); }
     this.doc = scan(text, this.file.basename); this.shell(); this.draw();
     await this.restoreLinks();
-    if (initial) requestAnimationFrame(() => { if (version === this.loadVersion) this.fit(); });
+    if (initial) this.contentEl.ownerDocument.defaultView?.requestAnimationFrame(() => { if (version === this.loadVersion) this.fit(); });
   }
   private async restoreLinks() {
     for (const key of [...this.preferences.openLinks]) {
@@ -375,7 +374,7 @@ class MapView extends FileView {
         clear(); drop = null;
         const target = this.canvas.ownerDocument.elementFromPoint(p.clientX, p.clientY)?.closest<HTMLElement>('.mwi-node');
         const d = target?.dataset.key ? this.displays.get(target.dataset.key) : null;
-        if (target && d && !d.readonly && d.key !== key && !(d.source.depth>0 && d.source.start>=source!.source.start && d.source.start<source!.source.end)) {
+        if (target && d && !d.readonly && d.key !== key && !(d.source.depth>0 && d.source.start>=source.source.start && d.source.start<source.source.end)) {
           const rect = target.getBoundingClientRect(); const ratio = (p.clientY - rect.top) / rect.height;
           const relation = ratio < 0.25 ? 'before' : ratio > 0.75 ? 'after' : 'child';
           if(d.source.depth || relation==='child'){
@@ -390,7 +389,7 @@ class MapView extends FileView {
       if (this.canvas.hasPointerCapture(e.pointerId)) this.canvas.releasePointerCapture(e.pointerId);
       preview?.remove();node?.removeClass('mwi-drag-source');this.canvas.removeClass('mwi-dragging');
       clear(); if (!cancel && dragged && source && drop) { const target = drop; this.selected = source.key; void this.moveNode(source.source, target.row, target.relation); }
-      setTimeout(() => { this.suppressClick = false; }, 0);
+      this.contentEl.ownerDocument.defaultView?.setTimeout(() => { this.suppressClick = false; }, 0);
     };
     this.canvas.onpointerup = () => finish(false); this.canvas.onpointercancel = () => finish(true);
   }
