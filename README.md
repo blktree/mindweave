@@ -63,31 +63,15 @@ Select a node and focus the canvas first. While editing text, normal editor shor
 
 Drag a node onto another node to make it a child, or near its upper/lower edge to change order. Drag the bottom divider upward to reveal the content panel. Body editing uses native autosave; Cmd/Ctrl + S also saves.
 
-### Limitations and privacy
+### Before editing
 
-- Markdown supports six heading levels. File roots and read-only outline/list nodes cannot be copied or cut as editable subtrees.
-- Expanded external outlines are read-only for structural edits; editing their content writes back to the linked source note.
-- Structural undo and native body-editor undo are separate. Body or external file changes clear old structural history to avoid overwriting newer content.
-- No plugin-specific account, paid feature lock, telemetry, advertising, or self-update mechanism.
-- MindWeave does not upload notes or use its own remote API. Obsidian or other extensions may fetch remote images and embedded content referenced by your notes.
-- Editing writes to Markdown files in your vault. Appearance and language preferences are stored in the plugin data file. Copy/cut writes selected content to the system clipboard; paste reads clipboard text when invoked.
-- Mobile is not supported. Windows/Linux live testing and large-scale Markdown edge-case testing are still pending.
+Edits change your Markdown files, including linked notes you choose to edit. Back up your vault; undo is not a backup. Markdown supports six heading levels, and expanded linked outlines and list nodes have read-only structure.
 
-### Development and license
+MindWeave does not upload your notes or collect telemetry. Remote content embedded in notes may still load through Obsidian. Copy and paste use the system clipboard when invoked.
 
-```sh
-npm ci
-npm test
-npm run build
-npm run release:check
-node install-preview.mjs /absolute/path/to/vault
-```
+### License and support
 
-Build inputs are recorded in `build-inputs.json`. Obsidian and CodeMirror modules are provided by the host rather than bundled. Live verification scripts modify dedicated QA notes and may create attachments; do not point them at personal notes. Automated checks do not constitute Community directory approval.
-
-Copyright (C) 2026 blktree. Licensed under **AGPL-3.0-only**, without warranty. See [LICENSE](LICENSE) and [NOTICE](NOTICE). The package setting `private: true` prevents accidental npm publication; the source repository is public.
-
-Development is supported by voluntary contributions: [Buy Me a Coffee](https://buymeacoffee.com/blktree). Donations do not unlock or restrict features.
+Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE) · [Buy Me a Coffee](https://buymeacoffee.com/blktree)
 
 ---
 
@@ -130,32 +114,12 @@ Development is supported by voluntary contributions: [Buy Me a Coffee](https://b
 - R／雙擊使用節點旁的寬版輸入框，Enter 或點擊畫布空白處儲存、Esc 取消；不是另開對話框。
 - 顯示設定按筆記記憶；重新開啟重新適配全圖。
 
-## 目前界線
+### 使用前提醒
 
+編輯會直接修改 Markdown，包括你選擇編輯的連結筆記。請先備份，復原功能不能取代備份。Markdown 最多支援六級標題；展開的連結大綱與清單節點，其結構為唯讀。
 
-- 重新命名、搬移及復原會一起追蹤節點外觀與選取，不需重新上色。
-- 標題／結構歷史與正文原生歷史分開；正文或外部檔案更新後會清除舊結構歷史，避免結構復原覆蓋新正文。
-- 尚未進行手機版實機測試、大量真實筆記的 Markdown 邊界測試，或官方目錄送審。
-- 本專案採用 AGPL-3.0-only，Copyright (C) 2026 blktree。完整條款見 [LICENSE](LICENSE)，著作權聲明見 [NOTICE](NOTICE)。`private: true` 僅防止誤發佈 npm，不代表原始碼不公開。
+MindWeave 不上傳筆記、不蒐集遙測資料。筆記中的遠端圖片等內容仍可能透過 Obsidian 載入；複製貼上操作會使用系統剪貼簿。
 
-## 隱私、網路與費用
+### 授權與支持
 
-- 目前外掛沒有登入、付費驗證、遙測、廣告或自動更新機制；不要求外掛專用帳號，也沒有付費功能鎖。
-- 外掛程式沒有自建遠端 API 或主動上傳筆記。正文使用 Obsidian 的 Markdown 渲染器；筆記若包含遠端圖片或其他嵌入內容，Obsidian／已安裝擴充仍可能向該內容來源發出請求，因此不保證任意筆記均完全離線。
-- 編輯操作會修改目前 vault 中的 Markdown，包含明確選取的連結筆記正文；不主動讀寫 vault 以外的檔案。
-- 自訂外觀與語言儲存在外掛的 `data.json`。建議使用前備份 vault；正文與結構的復原歷史分開。
-- 允許依 AGPL-3.0-only 使用、修改與散布，軟體不提供擔保。採公開原始碼與自願贊助方向，贊助入口使用 manifest 的 fundingUrl，由 Obsidian 顯示；不影響功能使用。未來若收費或需要帳號，必須先更新本說明。
-
-## 開發與驗證
-
-```sh
-npm ci
-npm test
-npm run build
-npm run release:check
-node install-preview.mjs /absolute/path/to/vault
-```
-
-建置輸出 `build-inputs.json` 可檢查所有打包來源；執行時 external 引用主程式提供的 `obsidian`、`@codemirror/state`、`@codemirror/view`，不打包其實作。
-
-公開測試使用 `tests/` 內的合成資料與 `docs/examples/` 範例，不需要私人筆記。自動測試通過不代表所有平台或 Markdown 邊界情況均已實測，也不代表官方上架審核通過。
+Copyright © 2026 blktree。[AGPL-3.0-only 授權](LICENSE) · [著作權聲明](NOTICE) · [支持開發](https://buymeacoffee.com/blktree)
