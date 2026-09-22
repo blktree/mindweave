@@ -36,9 +36,6 @@ Desktop only, requiring Obsidian 1.13.7 or later. Tested on macOS; Windows and L
 4. Open a Markdown note and click the lightbulb in the left sidebar. The toolbar document icon switches back to Markdown.
 5. Choose your interface language under **Settings → MindWeave → Language**. This changes interface labels, not note content.
 
-Back up your vault before using editing features. Read the [bilingual user guide](docs/USER_GUIDE.md) for complete walkthroughs: building a mind map from scratch and converting an existing Markdown note.
-
-Practice notes: [Weekend Trip](docs/examples/01-weekend-trip.md) and [Website Redesign](docs/examples/02-website-redesign.md).
 
 ### Keyboard and mouse controls
 
@@ -92,9 +89,6 @@ Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE) · [Buy
 
 ![MindWeave 中英文範例與正文閱讀 / Bilingual mind map and content preview](docs/images/03-existing-note-map.png)
 
-第一次使用請看 [中英文操作手冊 / Bilingual user guide](docs/USER_GUIDE.md)，包含「從空白建立心智圖」與「既有 Markdown 轉心智圖」的完整步驟、預期結果、快捷鍵及常見問題。
-
-可下載練習筆記：[週末旅行 / Weekend Trip](docs/examples/01-weekend-trip.md)、[網站改版 / Website Redesign](docs/examples/02-website-redesign.md)。範例內容同時包含中文與英文，不含私人資料。
 
 
 開啟 Markdown 筆記後，使用命令「開啟思維導圖」、檔案選單「以 MindWeave 開啟」，或左側燈泡圖示。工具列的文件圖示可切回 Markdown。
