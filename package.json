@@ -1,0 +1,19 @@
+{
+  "name": "mindweave-independent",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "build": "tsc --noEmit && node build.mjs",
+    "test": "vitest run",
+    "release:check": "npm test && npm run build && node check-release.mjs"
+  },
+  "devDependencies": {
+    "obsidian": "1.8.7",
+    "esbuild": "0.28.2",
+    "typescript": "5.8.3",
+    "vitest": "4.1.11",
+    "@types/node": "22.15.30"
+  }
+}

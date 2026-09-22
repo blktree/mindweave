@@ -1,0 +1,11 @@
+import { readFile, mkdir, copyFile, access } from 'node:fs/promises';
+import { resolve, join } from 'node:path';
+const vault = process.argv[2];
+if (!vault) throw new Error('請提供測試 vault 的絕對路徑。');
+await access(join(vault, '.obsidian'));
+const manifest = JSON.parse(await readFile('manifest.json', 'utf8'));
+if (manifest.id !== 'mindweave-independent') throw new Error('此腳本只能部署獨立預覽 ID。');
+const target = resolve(vault, '.obsidian/plugins', manifest.id);
+await mkdir(target, { recursive: true });
+for (const name of ['main.js', 'styles.css', 'manifest.json', 'LICENSE', 'NOTICE', 'PROVENANCE.md']) await copyFile(name, join(target, name));
+console.log(`獨立預覽已安裝到 ${target}；舊版未變更。`);
