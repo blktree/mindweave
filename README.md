@@ -1,5 +1,13 @@
 # MindWeave
 
+**Available in English, 日本語, 简体中文, and 繁體中文.**
+
+The default interface language is Traditional Chinese. To switch to English, open **Settings → MindWeave → 語言 (Language)** and choose **English**. This changes toolbar labels, tooltips, and shortcut descriptions; your notes stay in their original language. Some editor labels and error messages are still in Traditional Chinese.
+
+**支援英文、日文、簡體中文與繁體中文。** 預設為繁體中文，可在 **設定 → MindWeave → 語言** 切換工具列、提示與快捷鍵說明，筆記內容不會被翻譯。
+
+![MindWeave language settings: English, Japanese, Simplified Chinese, and Traditional Chinese](docs/images/04-language-settings.png)
+
 [English](#english) | [繁體中文](#繁體中文)
 
 ## English
