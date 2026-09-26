@@ -8,18 +8,29 @@ The default interface language is Traditional Chinese. To switch to English, ope
 
 ![MindWeave language settings: English, Japanese, Simplified Chinese, and Traditional Chinese](docs/images/04-language-settings.png)
 
+## ▶ YouTube tutorials / YouTube 操作教學
+
+Watch the step-by-step video tutorials to see how to use MindWeave. **Click a thumbnail below to watch on YouTube.**
+
+想知道如何操作？直接觀看中英文教學影片。**點擊下方影片縮圖，即可前往 YouTube。**
+
+| English tutorial | 中文操作教學 |
+| --- | --- |
+| [![Watch the English MindWeave tutorial on YouTube](https://i.ytimg.com/vi/48iJPPwGENs/hqdefault.jpg)](https://www.youtube.com/watch?v=48iJPPwGENs) | [![在 YouTube 觀看 MindWeave 中文操作教學](https://i.ytimg.com/vi/vD3iUtLDmx0/hqdefault.jpg)](https://www.youtube.com/watch?v=vD3iUtLDmx0) |
+| [▶ Watch on YouTube — English](https://www.youtube.com/watch?v=48iJPPwGENs) | [▶ 前往 YouTube 觀看中文教學](https://www.youtube.com/watch?v=vD3iUtLDmx0) |
+
 [English](#english) | [繁體中文](#繁體中文)
 
 ## English
 
 Turn your Markdown notes into interactive, editable mind maps in Obsidian. Understand information faster, organize your thoughts, and develop new ideas while keeping your content in Markdown.
 
-Desktop only, requiring Obsidian 1.13.7 or later. Tested on macOS; Windows and Linux still need live verification. Not yet listed in the Obsidian Community directory.
+Desktop only, requiring Obsidian 1.13.7 or later. Tested on macOS; Windows and Linux still need live verification.
 
-### Introduction videos
+### YouTube video tutorials
 
-- [English introduction](https://www.youtube.com/watch?v=48iJPPwGENs)
-- [Chinese introduction](https://www.youtube.com/watch?v=vD3iUtLDmx0)
+- [▶ Watch the English tutorial on YouTube](https://www.youtube.com/watch?v=48iJPPwGENs)
+- [▶ Watch the Chinese tutorial on YouTube](https://www.youtube.com/watch?v=vD3iUtLDmx0)
 
 ![MindWeave mind map and content preview](docs/images/03-existing-note-map.png)
 
@@ -92,14 +103,14 @@ Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE)
 
 把 Markdown 筆記轉成可閱讀、編輯與重新分類的心智圖。
 
-可從 [GitHub Releases](https://github.com/blktree/mindweave/releases/latest) 下載，目前尚未在社群目錄上架。支援 Obsidian 桌面版 1.13.7 以上；實機測試平台為 macOS，Windows／Linux 尚待實機驗證，手機版不開放安裝。
+可從 [GitHub Releases](https://github.com/blktree/mindweave/releases/latest) 下載。支援 Obsidian 桌面版 1.13.7 以上；實機測試平台為 macOS，Windows／Linux 尚待實機驗證，手機版不開放安裝。
 
-## 介紹影片 / Introduction videos
+## YouTube 操作教學
 
-觀看 MindWeave 的功能介紹與操作示範。Watch MindWeave in action:
+點擊下方連結，前往 YouTube 觀看 MindWeave 的功能介紹與操作教學：
 
-- [English introduction — MindWeave for Obsidian](https://www.youtube.com/watch?v=48iJPPwGENs)
-- [中文介紹 — MindWeave Obsidian 心智圖外掛](https://www.youtube.com/watch?v=vD3iUtLDmx0)
+- [▶ YouTube 英文操作教學 — MindWeave for Obsidian](https://www.youtube.com/watch?v=48iJPPwGENs)
+- [▶ YouTube 中文操作教學 — MindWeave Obsidian 心智圖外掛](https://www.youtube.com/watch?v=vD3iUtLDmx0)
 
 ## 使用
 
