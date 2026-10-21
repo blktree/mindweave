@@ -1,5 +1,11 @@
 # MindWeave
 
+**MindWeave is an Obsidian mindmap plugin that turns Markdown notes into interactive, editable mindmaps.**
+
+**MindWeave 是 Obsidian 心智圖外掛，可將 Markdown 筆記轉成能互動、編輯的心智圖。**
+
+![MindWeave Obsidian mindmap plugin showing a Markdown note as a mindmap with a content preview / MindWeave 心智圖與筆記正文預覽](docs/images/03-existing-note-map.png)
+
 **Available in English, 日本語, 简体中文, and 繁體中文.**
 
 The default interface language is Traditional Chinese. To switch to English, open **Settings → MindWeave → 語言 (Language)** and choose **English**. This changes toolbar labels, tooltips, and shortcut descriptions; your notes stay in their original language. Some editor labels and error messages are still in Traditional Chinese.
@@ -31,8 +37,6 @@ Desktop only, requiring Obsidian 1.13.7 or later. Tested on macOS; Windows and L
 
 - [▶ Watch the English tutorial on YouTube](https://www.youtube.com/watch?v=48iJPPwGENs)
 - [▶ Watch the Chinese tutorial on YouTube](https://www.youtube.com/watch?v=vD3iUtLDmx0)
-
-![MindWeave mind map and content preview](docs/images/03-existing-note-map.png)
 
 ### Features
 
@@ -113,10 +117,6 @@ Copyright © 2026 blktree. [AGPL-3.0-only](LICENSE) · [Notices](NOTICE)
 - [▶ YouTube 中文操作教學 — MindWeave Obsidian 心智圖外掛](https://www.youtube.com/watch?v=vD3iUtLDmx0)
 
 ## 使用
-
-![MindWeave 中英文範例與正文閱讀 / Bilingual mind map and content preview](docs/images/03-existing-note-map.png)
-
-
 
 開啟 Markdown 筆記後，使用命令「開啟思維導圖」、檔案選單「以 MindWeave 開啟」，或左側燈泡圖示。工具列的文件圖示可切回 Markdown。
 
